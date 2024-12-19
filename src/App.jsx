@@ -1,10 +1,14 @@
 import './App.css';
 import dessertProducts from './data.json';
 import { AddToCart } from './Icons';
+import {EmptyCart} from './Icons';
 
 const BASE_URL = "https://res.cloudinary.com/dc2c49xov/desserts";
 
+
 function App() {
+
+
   return (
     <div className='whole-section'>
     <div class="products-section">
@@ -42,7 +46,16 @@ function App() {
     ))}
   </div>
 </div>
- <div className='cart-section'></div>
+ <div className='cart-section'>
+ 
+ <div class="cart">
+ <h1 className='cart-title'> Your Cart (0) </h1>
+  <div class="cart-icon">
+    <EmptyCart/>
+  </div>
+  <p class="cart-message">Your added items will appear here</p>
+</div>
+ </div>
 </div>
     
   );
