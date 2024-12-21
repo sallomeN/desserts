@@ -2,11 +2,11 @@ import React from "react";
 import { EmptyCart } from "../icons/Icons";
 import { RemoveItem } from "../icons/Icons";
 
-const Cart = ({ cart }) => {
+const Cart = ({cart, onRemoveFromCart, totalPrice, totalQuantity  }) => {
 
 return (
     <div className="cart">
-      <h1 className="cart-title">Your Cart </h1>
+      <h1 className="cart-title">Your Cart ({totalQuantity}) </h1>
       {cart.length === 0 ? (
         <div className="cart-icon">
           <EmptyCart />
@@ -18,7 +18,7 @@ return (
             <div className="cart-item" key={item.name}>
               <span>{item.name}</span>
               <span>${item.price} x {item.quantity}</span>
-              <button >
+              <button  onClick={() => onRemoveFromCart(item)} >
                 <RemoveItem/>
               </button>
             </div>
