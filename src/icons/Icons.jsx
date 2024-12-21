@@ -28,6 +28,7 @@ export const CarbonNeutral = () => {
       height="20"
       fill="none"
       viewBox="0 0 21 20"
+      className="carboneutral"
     >
       <path
         fill="#1EA575"

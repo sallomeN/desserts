@@ -62,11 +62,13 @@ function App() {
   }
 
   const decrementQuantity = (dessert) => {
-    const updatedCart = [...cart]
+    let updatedCart = [...cart]
     const existingItem = updatedCart.find((item) => item.name === dessert.name)
 
-    if (existingItem && existingItem.quantity >= 1) {
+    if (existingItem && existingItem.quantity > 1) {
       existingItem.quantity -= 1
+    } else if (existingItem && existingItem.quantity === 1) {
+     updatedCart = cart.filter((item) => item.name !== dessert.name)
     }
 
     setCart(updatedCart)
