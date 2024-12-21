@@ -4,9 +4,10 @@ import { DecrementQuantity } from "../icons/Icons";
 import { IncrementQuantity } from "../icons/Icons";
 
 
-const BASE_URL = "https://res.cloudinary.com/dc2c49xov/desserts";
+const BASE_URL = "https://res.cloudinary.com/dc2c49xov/desserts"
 
-const Dessert = ({dessert, isInCart}) => {
+const Dessert = ({dessert, onAddToCart, isInCart, onIncrementQuantity, onDecrementQuantity, quantity}) => {
+
     return(
 <div
  className={`product-card ${isInCart ? "in-cart" : ""}`}>
@@ -28,18 +29,22 @@ const Dessert = ({dessert, isInCart}) => {
 </picture>
 
 <div className="below-stuff">
-        <button className="add-to-cart">
-         <AddToCart /> Add to Cart
-        </button>
+   {isInCart ? (
     <div className="quantity-controls">
-        <button>
-            <DecrementQuantity/>
+        <button onClick={() => onDecrementQuantity(dessert)}>
+            <DecrementQuantity />
         </button>
-        <span>{isInCart.quantity}</span>
-        <button>
-            <IncrementQuantity/>
+        <span>{quantity}</span>
+        <button onClick={() => onIncrementQuantity(dessert)}>
+            <IncrementQuantity />
         </button>
     </div>
+        ) : (
+          <button onClick={() => onAddToCart(dessert)} className="add-to-cart">
+            <AddToCart/> Add to Cart
+          </button>
+        )}
+
     <span className="product-info">
         <p className="category">{dessert.category}</p>
         <h2>{dessert.name}</h2>
