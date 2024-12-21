@@ -31,12 +31,12 @@ const Dessert = ({dessert, onAddToCart, isInCart, onIncrementQuantity, onDecreme
 <div className="below-stuff">
    {isInCart ? (
     <div className="quantity-controls">
-        <button onClick={() => onDecrementQuantity(dessert)}>
-            <DecrementQuantity />
+        <button onClick={() => onDecrementQuantity(dessert)} className="decrement-button">
+            <DecrementQuantity/>
         </button>
         <span>{quantity}</span>
-        <button onClick={() => onIncrementQuantity(dessert)}>
-            <IncrementQuantity />
+        <button onClick={() => onIncrementQuantity(dessert)} className="decrement-button">
+            <IncrementQuantity/>
         </button>
     </div>
         ) : (

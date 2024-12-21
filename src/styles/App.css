@@ -57,7 +57,6 @@ body {
  
 .product-card {
   background: transparent;
-  overflow: hidden;
   text-align: center;
 }
  
@@ -69,7 +68,6 @@ body {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-bottom: 1px solid #eee;
 }
  
 /* Add to Cart Button Styling */
@@ -177,4 +175,60 @@ body {
 /* red border for added items */
 .product-card.in-cart .img {
   border: 2px solid red;
+}
+.quantity-controls {
+  position: absolute;
+  transform: translate(-50%, -70%);
+  background: rgb(164, 45, 8);
+  color: white;
+  border: 1px solid white;
+  border-radius: 35px;
+  height: 4rem;
+  padding: 0.2rem 2.7rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+.decrement-button{
+  color: white;
+  background-color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.cart-item{
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid gray;
+  font-size: 1.3rem;
+  padding-top: 1.5rem;
+  /* padding-bottom: 0.7rem ; */
+}
+.remove-item{
+  background-color: white;
+  width: 1.6rem;
+  height: 1.6rem;
+  cursor: pointer;
+  border:2 px solid rgb(176, 74, 105);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.confim-btn{
+  margin-top: 2rem;
+  padding: 1rem 2rem 1rem 2rem;
+  background-color: rgb(164, 45, 8);
+  border: none;
+  font-size: 1.3rem;
+  color: white;
+  border-radius: 70px;
+  font-weight: bold;
 }
