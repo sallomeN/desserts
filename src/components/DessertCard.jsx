@@ -10,9 +10,10 @@ const Dessert = ({dessert, onAddToCart, isInCart, onIncrementQuantity, onDecreme
 
     return(
 <div
- className={`product-card ${isInCart ? "in-cart" : ""}`}>
+ className={`product-card ${isInCart ? "in-cart" : ""}`}> {/*ეს გვეხმარება პირობითი კლასის მინიჭებაში, თუ ეს ნივთი კალათაშია ანუ თუ კმაყოფილდება isInCart პირობა,
+ მაშინ ამ პროდუქტს ეძლევა in-cart კლასი, რომელიც წითელი ჩარჩოს გამოსასახად გვჭირდება */}
 
-<picture>
+<picture> 
 <source
     media="(min-width:1024px)"
     srcSet={`${BASE_URL}/${dessert.images.desktop}`}
@@ -29,18 +30,18 @@ const Dessert = ({dessert, onAddToCart, isInCart, onIncrementQuantity, onDecreme
 </picture>
 
 <div className="below-stuff">
-   {isInCart ? (
+   {isInCart ? (  /* თუ დესერტი არის კალათაში, დაბლა მოცემული ღილაკები , რომელთა დაჭერაზეც app.jsx- ში უკვე დაწერილი ფუნქციები ეშვება გვეძლევა საშუალება ვაკონტროლოთ მისი რაოდენობა*/
     <div className="quantity-controls">
-        <button onClick={() => onDecrementQuantity(dessert)} className="decrement-button">
+        <button onClick={() => onDecrementQuantity(dessert)} className="decrement-button"> {/*შევამციროთ რაოდენობა ერთით*/}
             <DecrementQuantity/>
         </button>
         <span>{quantity}</span>
-        <button onClick={() => onIncrementQuantity(dessert)} className="decrement-button">
+        <button onClick={() => onIncrementQuantity(dessert)} className="decrement-button"> {/*გავზარდოთ რაოდენობა ერთით*/}
             <IncrementQuantity/>
         </button>
     </div>
         ) : (
-          <button onClick={() => onAddToCart(dessert)} className="add-to-cart">
+          <button onClick={() => onAddToCart(dessert)} className="add-to-cart"> {/*ხოლო თუ არ გვაქვს კალათაში დამატებული მაშინ კალათაში დამატების ფუნქციით გვეძლევა საშუალება ეს გავაკეთოთ*/}
             <AddToCart/> Add to Cart
           </button>
         )}
