@@ -25,10 +25,13 @@ return (
                 <RemoveItem/>
               </button></div>
             </div>
+              <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
               <span style={{display:"flex", justifyContent:"flex-start", alignItems:"center"}}>
                 <p style={{fontSize:"1.2rem", color:"rgb(164, 45, 8)", fontWeight:"bold", paddingRight:"0.8rem"}}>
                     ${item.price}</p> x <p style={{paddingLeft:"0.8rem", fontWeight:"bold"}}>{item.quantity}</p>
                 </span>
+                <span><b>${item.price * item.quantity}</b></span>
+              </div>
             </div>
           ))}
           <h2>Total: ${totalPrice.toFixed(2)}</h2> {/* უზრუნველყოფს რრომ ჯამური ფასი დამრგვალდეს მძიმის შემდეგ 2 ციფრით*/}

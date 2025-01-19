@@ -108,7 +108,7 @@ const updateTotalPrice = (updatedCart) => {   // updatedCart არის ჩვ
     const quantity = itemInCart ? itemInCart.quantity : 0 // გამოვსახავთ დესერტის რაოდენობას, იმ დესერტების რომლებიც სათითაოდ map-ით გამოგვაქვს. 
     // თუ ეს დესერტი კალათაში მოიძებნება, მისი რაოდენობა იქნება itemInCart.quantity, თუ არა და 0
 
-    //! ფუნქციები გადავეცით prop-ებად
+    //! ფუნქციები გადავეცით prop-ებად 
   return (
       <Dessert
         key={dessert.name}
